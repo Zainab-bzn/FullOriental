@@ -1,0 +1,238 @@
+/* MAIN */
+.checkoutPage {
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  color: #4a2e1d; /* dark chocolate */
+  background: #f9f1e8; /* beige */
+}
+
+/* TITLE */
+.checkoutTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  color: #8b5e3c; /* bronze brown */
+}
+
+/* SECTIONS */
+.itemsSection {
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #8b5e3c; /* bronze */
+  border-bottom: 2px solid #d7c4b4; /* soft beige line */
+  padding-bottom: 5px;
+}
+
+/* ITEMS GRID */
+.itemsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* INDIVIDUAL ITEM CARD */
+.checkoutItem {
+  background-color: #ffffff; /* white */
+  border: 1px solid #e4d6c8; /* soft beige border */
+  border-radius: 10px;
+  width: calc(33% - 13.33px);
+  box-shadow: 0 3px 10px rgba(139, 94, 60, 0.15); /* bronze shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  transition: transform 0.2s ease;
+}
+
+.checkoutItem:hover {
+  transform: scale(1.05);
+}
+
+/* ITEM IMAGE */
+.checkoutItemImage {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+.checkoutItemName {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #6b4b33; /* dark brown */
+}
+
+.checkoutItemPrice {
+  font-size: 1rem;
+  color: #8b5e3c; /* bronze */
+  font-weight: bold;
+}
+
+/* TOTAL */
+.totalPrice {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: right;
+  margin: 20px 0;
+  color: #5e3d1f; /* deep brown */
+}
+
+/* FORM */
+.checkoutForm {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #e4d6c8;
+  max-width: 500px;
+  margin: 0 auto 40px auto;
+  box-shadow: 0 3px 10px rgba(139, 94, 60, 0.18);
+}
+
+.formGroup {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #6b4b33;
+}
+
+.formGroup input,
+.formGroup textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #d7c4b4;
+  font-size: 1rem;
+  resize: vertical;
+  background: #fffaf4;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #8b5e3c;
+  box-shadow: 0 0 5px rgba(139, 94, 60, 0.35);
+}
+
+/* SUBMIT BUTTON */
+.placeOrderButton {
+  background-color: #8b5e3c;
+  color: white;
+  font-size: 1.2rem;
+  padding: 14px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  width: 100%;
+  font-weight: 700;
+}
+
+.placeOrderButton:hover {
+  background-color: #6b4b33; /* darker hover */
+}
+
+/* CHECKOUT ACTIONS */
+.checkout-actions {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+}
+
+.checkout-actions button {
+  flex: 1;
+  font-size: 1.2rem;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 700;
+}
+
+.editOrderButton {
+  background-color: #a0765f;
+  color: white;
+}
+
+.editOrderButton:hover {
+  background-color: #8a6247;
+}
+
+.editOrderButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.placeOrderButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .checkoutItem {
+    width: calc(50% - 10px);
+  }
+}
+
+/* CHECKOUT ITEM CARD (for real cart items) */
+.checkout-item-card {
+  background-color: #ffffff;
+  border: 1px solid #e4d6c8;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  box-shadow: 0 3px 10px rgba(139, 94, 60, 0.1);
+}
+
+.checkout-item-card .item-info {
+  flex: 1;
+}
+
+.checkout-item-card h3 {
+  margin: 0 0 8px 0;
+  color: #4a2e1d;
+  font-size: 1.1rem;
+}
+
+.checkout-item-card .item-type,
+.checkout-item-card .item-details,
+.checkout-item-card .item-quantity {
+  margin: 3px 0;
+  font-size: 0.9rem;
+  color: #8b5e3c;
+}
+
+.checkout-item-card .item-price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #d4a373;
+  margin-left: 20px;
+}
+
+@media (max-width: 480px) {
+  .checkoutItem {
+    width: 100%;
+  }
+
+  .checkoutForm {
+    padding: 15px;
+    max-width: 100%;
+  }
+}

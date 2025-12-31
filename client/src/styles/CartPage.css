@@ -1,0 +1,40 @@
+
+.cart-page {
+  margin: 50px;
+  padding: 50px;
+  background: linear-gradient(135deg, #fff8f0, #fdf3e7); /* warm pastel gradient */
+  text-align: center;
+  min-height: 100vh;
+}
+
+.cart-page h1 {
+  margin: 58px 0 30px;
+  font-size: 30px;
+  color: #6b4b33; /* warm brown tone */
+  font-family: 'Segoe UI', sans-serif;
+  letter-spacing: 1px;
+}
+
+.cart-section {
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.cart-section h2 {
+  font-size: 24px;
+  color: #6b4b33;
+  font-family: 'Segoe UI', sans-serif;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f5d1a9;
+  padding-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.cart-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  justify-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}

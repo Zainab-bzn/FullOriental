@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cupcake-card {
+  width: 300px;
+  height: 400px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #fbebca;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* HOVER EFFECT (for desktop) */
+.cupcake-card:hover {
+  transform: translateY(-6px);
+}
+
+.cupcake-card img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  transition: filter 0.3s ease;
+}
+
+.cupcake-card:hover img {
+  filter: blur(3px) brightness(0.8);
+}
+
+.cupcake-name {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  background: rgba(119, 61, 30, 0.55);
+  color: white;
+  padding: 10px 0;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+}
+
+.cupcake-price {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(119, 61, 30, 0.8);
+  color: white;
+  padding: 10px 0;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+}
+
+.add-to-cart-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #773d1e;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.cupcake-card:hover .add-to-cart-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #5e2f14;
+}
+
+/* =========================================
+   RESPONSIVE LAYOUT
+   ========================================= */
+
+@media (max-width: 768px) {
+  /* On tablets, cards are wider */
+  .cupcake-card {
+    width: 45%;
+    height: 380px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* On phones, cards go nearly full width */
+  .cupcake-card {
+    width: 90%;
+    height: 340px;
+  }
+
+  /* Disable hover lift on small screens */
+  .cupcake-card:hover {
+    transform: none;
+  }
+
+  /* Reduce font sizes */
+  .cupcake-name {
+    font-size: 14px;
+  }
+
+  .cupcake-price {
+    font-size: 12px;
+  }
+}

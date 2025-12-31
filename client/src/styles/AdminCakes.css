@@ -1,0 +1,159 @@
+/* AdminCakes.css */
+.admin-cakes {
+  padding: 70px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-cakes h1 {
+  color: #8b5e3c;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 36px;
+}
+
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.add-btn {
+  padding: 12px 25px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.add-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+}
+
+.view-cakes-btn {
+  padding: 10px 20px;
+  background-color: #2196F3;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.view-cakes-btn:hover {
+  background-color: #1976D2;
+}
+
+.admin-cakes table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.admin-cakes th {
+  background-color: #8b5e3c;
+  color: white;
+  padding: 18px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.admin-cakes td {
+  padding: 18px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.admin-cakes tr:hover {
+  background-color: #f9f9f9;
+}
+
+.cake-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #e0e0e0;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.update-btn, .delete-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.update-btn {
+  background-color: #FF9800;
+  color: white;
+}
+
+.update-btn:hover {
+  background-color: #F57C00;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Empty state */
+.admin-cakes table tbody tr td[colspan] {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-cakes {
+    padding: 15px;
+  }
+  
+  .header-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .add-btn, .view-cakes-btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .admin-cakes table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+}

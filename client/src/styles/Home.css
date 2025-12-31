@@ -1,0 +1,406 @@
+.hero {
+  background: url("../assets/patisserie-bg.jpg") center/cover no-repeat;
+  height: 95vh;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  color: #5d3d2c;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 247, 239, 0.75);
+}
+
+.hero-logo {
+  width: 450px;
+  margin-top: 80px;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-tagline {
+  z-index: 3;
+  position: relative;
+  font-size: 22px;
+  margin-top: 0px;
+}
+
+.hero-btn {
+  z-index: 3;
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 14px 35px;
+  background: #8b5e3c;
+  color: white;
+  border-radius: 40px;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+/* OUR STORY */
+.our-story,
+.signature {
+  background: #faefe5;
+  text-align: center;
+  padding: 70px 18%;
+  color: #5f4129;
+}
+
+.our-story h2,
+.signature h2 {
+  font-size: 32px;
+  color: #4c2e1f;
+  margin-bottom: 20px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px 80px;
+  padding: 70px 12%;
+  background: #fbf4ed;
+}
+
+.feature-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.feature-row img {
+  width: 180px;
+  height: 180px;
+  border-radius: 16px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.feature-text h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #7d502f;
+}
+
+.feature-text p {
+  color: #6c4d38;
+  font-size: 15.5px;
+  line-height: 1.5;
+  max-width: 270px;
+}
+
+/* DISCOUNT BANNER */
+.discount-banner {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f8eddc, #f2d4b3);
+  display: flex;
+  justify-content: center;
+}
+
+.discount-inner {
+  text-align: center;
+  max-width: 700px;
+}
+
+.discount-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: #b27f55;
+}
+
+.discount-title {
+  font-size: 36px;
+  color: #4c2e1f;
+  margin: 10px 0;
+}
+
+.discount-text {
+  margin-bottom: 18px;
+  color: #6c4d38;
+}
+
+.discount-cta {
+  background: #8b5e3c;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+/* BEST SELLING */
+.best-selling {
+  background: #f7eee5;
+  padding: 70px 5%;
+  text-align: center;
+}
+
+.best-selling h2 {
+  font-size: 32px;
+  color: #4c2e1f;
+  margin-bottom: 40px;
+}
+
+.best-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.best-card {
+  background: #fff;
+  border-radius: 22px;
+  width: 330px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+/* Hover lift */
+.best-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* Image stays same size for all */
+.best-img {
+  width: 100%;
+  height: 420px; /* SAME for all images */
+  overflow: hidden;
+  border-bottom: 1px solid #f2e6db;
+}
+
+.best-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+    transition: transform 0.4s ease;
+}
+
+
+.best-card:hover .best-img img {
+  transform: scale(1.08);
+}
+
+.custom-cake-btn {
+  display: inline-block;
+  background: #8b5e3c;
+  color: white;
+  padding: 16px 40px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #8b5e3c;
+}
+
+.custom-cake-btn:hover {
+  background: transparent;
+  color: #8b5e3c;
+  transform: translateY(-3px);
+}
+
+/* TEXT */
+.card-text {
+  padding: 18px 0 12px;
+  font-size: 22px;
+  color: #5f4129;
+}
+
+/* BUTTON */
+.card-btn {
+  display: block;
+  margin: 0 auto 25px;
+  width: 75%;
+  padding: 14px 0;
+  background: #c9a06c;
+  color: white;
+  border-radius: 18px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.best-card:hover .card-btn {
+  background: #8b5e3c;
+}
+
+.best-card:hover .card-btn {
+  color: #fff;
+}
+
+/* Hide original text on hover */
+.card-btn:hover {
+  color: transparent;
+}
+
+/* FEEDBACK */
+.feedback-section {
+  background: #faf2eb;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.feedback-title {
+  font-size: 32px;
+  margin-bottom: 0px;
+  color: #4a3323;
+}
+
+.feedback-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.feedback-card {
+  width: 35%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.feedback-card img {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 20px;
+}
+
+/* Optional fade animation */
+.fade {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 40px;
+  color: #b8895f;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.arrow:hover {
+  color: #8b623e;
+}
+
+.arrow.left {
+  margin-right: 20px;
+}
+
+.arrow.right {
+  margin-left: 20px;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE FIXES FOR ALL SECTIONS
+   ========================================= */
+
+@media (max-width: 992px) {
+  .features {
+    grid-template-columns: 1fr;
+    padding: 70px 5%;
+    gap: 50px 0;
+  }
+
+  .feature-row {
+    flex-direction: column; 
+    text-align: center;
+  }
+  
+  .feature-text p {
+    max-width: none; 
+  }
+
+  .best-grid {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .our-story,
+  .signature {
+    padding: 50px 10%; 
+  }
+
+  .hero {
+    height: 70vh;
+  }
+
+  .hero-logo {
+    width: 40%; 
+    max-width: 350px;
+    margin-top: 50px;
+  }
+
+  .hero-tagline {
+    font-size: 16px;
+  }
+
+
+  .discount-banner {
+    padding: 40px 15px;
+  }
+
+  .discount-title {
+    font-size: 28px;
+  }
+
+
+  .best-card {
+    width: 70%; 
+    max-width: 400px;
+  }
+
+  .best-img {
+    height: 250px; 
+  }
+
+
+  .feedback-section {
+    padding: 50px 0;
+  }
+
+  .feedback-wrapper {
+    flex-direction: row;
+  }
+
+  .feedback-card {
+    width: 90%; 
+    margin: 20px 0; 
+  }
+
+  .arrow {
+    font-size: 30px;
+    padding: 5px;
+  }
+  
+  .arrow.left {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .arrow.right {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}

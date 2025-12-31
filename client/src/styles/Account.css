@@ -1,0 +1,386 @@
+/* Account Page */
+.account-page {
+  width: 100%;
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  font-size: 15px;
+  color: #8b5e3c;
+  margin-bottom: 8px;
+}
+
+.account-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #3f2f20;
+  margin-bottom: 25px;
+}
+
+/* Message Styling */
+.login-message {
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  color: #8b5e3c;
+}
+
+.center-message {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Login/Register Cards */
+.login-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #e4d6c8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-top: 20px;
+}
+
+.login-card h2 {
+  margin-bottom: 12px;
+  color: #3f2f20;
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #583e2a;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  padding: 12px;
+  border-radius: 6px;
+  border: 2px solid #d4c4b5;
+  font-size: 15px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #8b5e3c;
+}
+
+/* Password Wrapper */
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-pass {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+}
+
+/* Remember Row */
+.remember-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* Buttons */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: #8b5e3c;
+  color: white;
+  border: none;
+  font-size: 17px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.login-btn:hover {
+  background: #6e472f;
+}
+
+.login-btn:disabled {
+  background: #a58a72;
+  cursor: not-allowed;
+}
+
+/* Tab Navigation */
+.account-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tab-navigation {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  border: none;
+  background: #eee;
+  color: #333;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.tab-button.active {
+  background: #4CAF50;
+  color: white;
+}
+
+.tab-button:hover:not(.active) {
+  background: #e0e0e0;
+}
+
+/* Tab Content */
+.tab-content {
+  background: #f0f8ff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #4CAF50;
+  margin-bottom: 30px;
+}
+
+/* Profile Tab */
+.profile-tab h2 {
+  color: #4CAF50;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.profile-info p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+.profile-info strong {
+  color: #333;
+  min-width: 80px;
+  display: inline-block;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-secondary {
+  padding: 10px 20px;
+  background-color: #666;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-danger {
+  padding: 10px 20px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: #45a049;
+}
+
+.btn-secondary:hover {
+  background-color: #555;
+}
+
+.btn-danger:hover {
+  background-color: #ff5252;
+}
+
+/* Orders Tab */
+.orders-tab h2 {
+  color: #4CAF50;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.order-item {
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.order-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: flex-start;
+}
+
+.order-number {
+  margin: 0 0 5px 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.order-date {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.order-total {
+  margin: 0;
+  font-weight: bold;
+  color: #4CAF50;
+  font-size: 16px;
+}
+
+.order-items {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.order-items-title {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  font-weight: bold;
+  color: #555;
+}
+
+.order-item-detail {
+  margin: 3px 0;
+  font-size: 13px;
+  margin-left: 15px;
+  color: #444;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.empty-state a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.empty-state a:hover {
+  text-decoration: underline;
+}
+
+/* Loading States */
+.loading-text {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .account-page {
+    padding: 20px 15px;
+  }
+  
+  .tab-navigation {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .tab-button {
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .order-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .btn-primary,
+  .btn-secondary,
+  .btn-danger {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 20px 15px;
+  }
+  
+  .account-title {
+    font-size: 24px;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,216 @@
+.admin-custom-cakes {
+  padding: 80px 20px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #f9f7f4;
+  min-height: 100vh;
+}
+
+.admin-header {
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 3px solid #d4a574;
+  padding-bottom: 20px;
+}
+
+.admin-header h1 {
+  font-size: 2.5em;
+  color: #6b4423;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+
+.cake-count {
+  font-size: 1.1em;
+  color: #8b5a3c;
+  margin: 0;
+}
+
+.no-cakes {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1.2em;
+  color: #8b5a3c;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cakes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.cake-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cake-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cake-image-wrapper {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.cake-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cake-details {
+  padding: 20px;
+}
+
+.cake-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e8dcc8;
+  padding-bottom: 10px;
+}
+
+.cake-header h3 {
+  margin: 0;
+  color: #6b4423;
+  font-size: 1.3em;
+}
+
+.cake-date {
+  font-size: 0.85em;
+  color: #999;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+.cake-info {
+  margin-bottom: 15px;
+}
+
+.cake-info p {
+  margin: 8px 0;
+  font-size: 0.95em;
+  color: #555;
+  line-height: 1.5;
+}
+
+.cake-info strong {
+  color: #6b4423;
+  font-weight: 600;
+}
+
+.cake-info em {
+  color: #7d5a3a;
+  font-style: italic;
+}
+
+.addons-list {
+  margin: 5px 0 0 20px;
+  padding-left: 15px;
+  list-style-type: disc;
+}
+
+.addons-list li {
+  color: #7d5a3a;
+  margin: 3px 0;
+}
+
+.cake-price {
+  font-size: 1.1em !important;
+  color: #d4a574 !important;
+  font-weight: bold !important;
+  margin-top: 12px !important;
+  border-top: 1px solid #e8dcc8;
+  padding-top: 10px !important;
+}
+
+.cake-user {
+  background-color: #f9f7f4;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  color: #8b5a3c;
+}
+
+.cake-user p {
+  margin: 0;
+}
+
+.loading {
+  padding: 80px 20px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #8b5a3c;
+  min-height: 100vh;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .cakes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-custom-cakes {
+    padding: 70px 15px 30px;
+  }
+
+  .admin-header h1 {
+    font-size: 1.8em;
+  }
+
+  .cakes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cake-image-wrapper {
+    height: 200px;
+  }
+
+  .cake-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cake-date {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-custom-cakes {
+    padding: 70px 10px 20px;
+  }
+
+  .admin-header h1 {
+    font-size: 1.5em;
+  }
+
+  .cake-details {
+    padding: 15px;
+  }
+
+  .cake-image-wrapper {
+    height: 180px;
+  }
+
+  .cake-info p {
+    font-size: 0.9em;
+  }
+}

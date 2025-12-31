@@ -1,0 +1,103 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff8f0;
+  color: #6b4b33;
+}
+
+/* === Header === */
+h1, h2, h3 {
+  color: #6b4b33;
+}
+
+.menu-page {
+  padding: 30px;
+  text-align: center;
+}
+
+/* === Buttons === */
+.checkout-link,
+.cart-link a,
+button {
+  background-color: #8b5e3c; /* Main Button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-link:hover,
+.cart-link a:hover,
+button:hover {
+  background-color: #c9a06c; /* Hover Button */
+}
+
+/* === Cupcake Cards === */
+.cupcake-card {
+  background-color: #fff6f1; /* Soft Pink Accent */
+  border: 1px solid #d7c4b4; /* Icon Border */
+  border-radius: 10px;
+  padding: 15px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.cupcake-image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* === Grid Layout === */
+.cupcake-grid {
+  display: flex;
+  flex-direction: row;     
+  flex-wrap: nowrap;       
+  gap: 20px;
+  justify-content: flex-start;
+  overflow-x: auto;            
+  padding: 20px;
+  
+}
+/* === Circular Preview Images === */
+.circle-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #d7c4b4;
+}
+
+/* === Star Feedback === */
+.star-rating {
+  font-size: 32px;
+  color: #d7c4b4;
+  cursor: pointer;
+}
+
+.star-rating .star.filled {
+  color: #b8935f; /* Gold/Bronze */
+}
+
+.star-rating .star:hover {
+  color: #b8935f;
+}
+
+/* === Footer === */
+footer {
+  background-color: #f0e4d6; /* Footer Background */
+  color: #7a543a; /* Footer Text */
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
