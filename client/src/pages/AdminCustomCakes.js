@@ -12,11 +12,16 @@ const AdminCustomCakes = () => {
 
   const fetchCustomCakes = async () => {
     try {
+      console.log("Fetching custom cakes from http://localhost:8080/admin/custom-cakes");
       const res = await axios.get("http://localhost:8080/admin/custom-cakes");
+      console.log("Custom cakes fetched successfully:", res.data);
       setCustomCakes(res.data || []);
     } catch (err) {
-      console.log("Error fetching custom cakes:", err);
-      alert("Failed to load custom cakes");
+      console.error("Error fetching custom cakes:", err);
+      console.error("Error response:", err.response?.data);
+      console.error("Error message:", err.message);
+      console.error("Error status:", err.response?.status);
+      alert("Failed to load custom cakes:\n" + (err.response?.data?.message || err.message));
     } finally {
       setLoading(false);
     }

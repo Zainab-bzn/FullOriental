@@ -43,8 +43,69 @@ db.connect((err) => {
     console.error("MySQL connection failed:", err);
   } else {
     console.log("✓ MySQL connected successfully");
+    // Initialize database tables if they don't exist
+    initializeTables();
   }
 });
+
+// Initialize database tables
+function initializeTables() {
+  const tables = [
+    `CREATE TABLE IF NOT EXISTS custom_cakes (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      cake_type_id INT,
+      cake_type VARCHAR(150) NOT NULL,
+      tier_id INT,
+      filling_id INT,
+      addons JSON,
+      notes TEXT,
+      reference_photo VARCHAR(255),
+      total_price DECIMAL(10, 2) NOT NULL,
+      user_id INT,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (cake_type_id) REFERENCES cake_types(id) ON DELETE SET NULL,
+      FOREIGN KEY (tier_id) REFERENCES cake_tiers(id) ON DELETE SET NULL,
+      FOREIGN KEY (filling_id) REFERENCES cake_fillings(id) ON DELETE SET NULL,
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
+    )`,
+    `CREATE TABLE IF NOT EXISTS cake_types (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      name VARCHAR(150) NOT NULL,
+      photo_path VARCHAR(255),
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )`,
+    `CREATE TABLE IF NOT EXISTS cake_tiers (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      tier_name VARCHAR(100) NOT NULL,
+      servings_min INT,
+      servings_max INT,
+      price DECIMAL(10, 2),
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )`,
+    `CREATE TABLE IF NOT EXISTS cake_fillings (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      filling_name VARCHAR(100) NOT NULL,
+      price DECIMAL(10, 2),
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )`,
+    `CREATE TABLE IF NOT EXISTS cake_addons (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      addon_name VARCHAR(100) NOT NULL,
+      price DECIMAL(10, 2),
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )`
+  ];
+
+  tables.forEach((table, index) => {
+    db.query(table, (err) => {
+      if (err) {
+        console.error(`Error creating table ${index}:`, err);
+      } else {
+        console.log(`✓ Table ${index + 1} initialized`);
+      }
+    });
+  });
+}
 
 
 app.post("/register", (req, res) => {
@@ -844,7 +905,60 @@ app.delete("/admin/cakes/:id", (req, res) => {
   });
 });
 
+app.get("/admin/custom-cakes", (req, res) => {
+  // First check if table exists
+  const checkTableQ = "SELECT COUNT(*) as count FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'patisserie' AND TABLE_NAME = 'custom_cakes'";
+  
+  db.query(checkTableQ, (tableCheckErr, tableCheckResult) => {
+    if (tableCheckErr) {
+      console.error("Table check error:", tableCheckErr);
+      return res.status(500).json({ message: "Database check error", error: tableCheckErr });
+    }
+    
+    const tableExists = tableCheckResult && tableCheckResult[0] && tableCheckResult[0].count > 0;
+    console.log("Custom cakes table exists:", tableExists);
+    
+    if (!tableExists) {
+      return res.status(500).json({ message: "custom_cakes table does not exist in database" });
+    }
+  
+    const q = `
+      SELECT 
+        cc.id,
+        cc.cake_type,
+        cc.tier_id,
+        cc.filling_id,
+        cc.addons,
+        cc.notes,
+        cc.reference_photo,
+        cc.total_price,
+        cc.user_id,
+        cc.created_at,
+        ct.name AS cake_type_name,
+        t.tier_name,
+        f.filling_name
+      FROM custom_cakes cc
+      LEFT JOIN cake_types ct ON cc.cake_type_id = ct.id
+      LEFT JOIN cake_tiers t ON cc.tier_id = t.id
+      LEFT JOIN cake_fillings f ON cc.filling_id = f.id
+      ORDER BY cc.created_at DESC
+    `;
 
+    db.query(q, (err, data) => {
+      if (err) {
+        console.error("Get custom cakes error:", err);
+        return res.status(500).json({ message: "Database error", error: err.message });
+      }
+
+      const formatted = (data || []).map((row) => ({
+        ...row,
+        addons: row.addons ? JSON.parse(row.addons) : [],
+      }));
+
+      return res.json(formatted);
+    });
+  });
+});
 
 app.post("/feedback", (req, res) => {
   const { userId, orderId, stars, comment } = req.body;
